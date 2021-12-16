@@ -1,0 +1,87 @@
+﻿{
+  "header": {
+    "resultCode": "00",
+    "resultMsg": "NORMAL SERVICE."
+  },
+  "body": {
+    "numOfRows": 100,
+    "pageNo": 1,
+    "totalCount": 8,
+    "items": {
+      "item": [
+        {
+          "basDt": "20211215",
+          "srtnCd": "A003550",
+          "isinCd": "KR7003550001",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG",
+          "crno": "1101110003543",
+          "corpNm": "(주)LG"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A011070",
+          "isinCd": "KR7011070000",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG이노텍",
+          "crno": "1101110192180",
+          "corpNm": "엘지이노텍(주)"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A032640",
+          "isinCd": "KR7032640005",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG유플러스",
+          "crno": "1101111296676",
+          "corpNm": "(주)LG유플러스"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A034220",
+          "isinCd": "KR7034220004",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG디스플레이",
+          "crno": "1101110393134",
+          "corpNm": "엘지디스플레이(주)"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A037560",
+          "isinCd": "KR7037560000",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG헬로비전",
+          "crno": "1101111144297",
+          "corpNm": "(주)엘지헬로비전"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A051900",
+          "isinCd": "KR7051900009",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG생활건강",
+          "crno": "1101112208000",
+          "corpNm": "(주)LG생활건강"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A051910",
+          "isinCd": "KR7051910008",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG화학",
+          "crno": "1101112207995",
+          "corpNm": "(주)LG화학"
+        },
+        {
+          "basDt": "20211215",
+          "srtnCd": "A066570",
+          "isinCd": "KR7066570003",
+          "mrktCtg": "KOSPI",
+          "itmsNm": "LG전자",
+          "crno": "1101112487050",
+          "corpNm": "LG전자(주)"
+        }
+      ]
+    }
+  }
+}

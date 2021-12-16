@@ -1,0 +1,59 @@
+{
+  "name": "KRXAPILib",
+  "description": "KRX증권종복정보 라이브러리",
+  "main": "NewActivity.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "2.11.4",
+    "UiPath.Mail.Activities": "1.12.2",
+    "UiPath.System.Activities": "21.10.2",
+    "UiPath.UIAutomation.Activities": "21.10.3",
+    "UiPath.WebAPI.Activities": "1.9.2"
+  },
+  "webServices": [
+    {
+      "namespace": "KRXStock",
+      "serviceDocument": "Services\\KRXStock.json",
+      "webDocumentUri": "D:\\RPA\\KRXAPILib\\GetKrxListedInfoService.json",
+      "uniqueReference": "EBtinojQPoAbL02naG+lYPLlm0FP7380MVSHmVhPfpQ="
+    }
+  ],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.10.3.0",
+  "projectVersion": "1.0.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": [
+        "Test_GetItemInfo.xaml"
+      ]
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

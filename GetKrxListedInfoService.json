@@ -1,0 +1,296 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "금융위원회_KRX상장종목정보",
+        "description": "KRX에 상장된 종목에 대한 정보",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.odcloud.kr/api/GetKrxListedInfoService/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "금융위원회_KRX상장종목정보"
+        }
+    ],
+    "paths": {
+        "/getItemInfo": {
+            "get": {
+                "description": "KRX에 상장된 종목에 대한 정보를 제공",
+                "tags": [
+                    "금융위원회_KRX상장종목정보"
+                ],
+                "summary": "종목정보",
+                "operationId": "getItemInfo",
+                "parameters": [
+                    {
+                        "name": "serviceKey",
+                        "in": "query",
+                        "description": "인증 키 ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "numOfRows",
+                        "in": "query",
+                        "description": "한 페이지 결과 수",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "in": "query",
+                        "description": "페이지 번호",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "resultType",
+                        "in": "query",
+                        "description": "구분(xml, json) Default: xml",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "basDt",
+                        "in": "query",
+                        "description": "검색값과 기준일자가 일치하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "beginBasDt",
+                        "in": "query",
+                        "description": "기준일자가 검색값보다 크거나 같은 데이터를 검색, 20200111",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "endBasDt",
+                        "in": "query",
+                        "description": "기준일자가 검색값보다 작은 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "likeBasDt",
+                        "in": "query",
+                        "description": "기준일자값이 검색값을 포함하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "likeSrtnCd",
+                        "in": "query",
+                        "description": "단축코드가 검색값을 포함하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "isinCd",
+                        "in": "query",
+                        "description": "검색값과 ISIN코드이 일치하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "likeIsinCd",
+                        "in": "query",
+                        "description": "ISIN코드가 검색값을 포함하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "itmsNm",
+                        "in": "query",
+                        "description": "검색값과 종목명이 일치하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "likeItmsNm",
+                        "in": "query",
+                        "description": "종목명이 검색값을 포함하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "crno",
+                        "in": "query",
+                        "description": "검색값과 법인등록번호가 일치하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "corpNm",
+                        "in": "query",
+                        "description": "검색값과 법인명이 일치하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "likeCorpNm",
+                        "in": "query",
+                        "description": "법인명이 검색값을 포함하는 데이터를 검색",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "정상 호출",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ApiResponse_ItemInfo"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "INVALID REQUEST PARAMETER ERROR.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Header"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "DB_ERROR.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Header"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "query_key": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ApiResponse_ItemInfo": {
+                "type": "object",
+                "properties": {
+                    "header": {
+                        "$ref": "#/components/schemas/Header"
+                    },
+                    "body": {
+                        "$ref": "#/components/schemas/Body_ItemInfo"
+                    }
+                }
+            },
+            "Body_ItemInfo": {
+                "type": "object",
+                "properties": {
+                    "numOfRows": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "한 페이지의 결과 수"
+                    },
+                    "pageNum": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "현재 조회된 데이터의 페이지 번호"
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "전체 데이터의 총 수"
+                    },
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "item": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/Item_ItemInfo"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Item_ItemInfo": {
+                "type": "object",
+                "properties": {
+                    "basDt": {
+                        "type": "string",
+                        "description": "YYYYMMDD<br/>조회의 기준일, 통상 거래일"
+                    },
+                    "srtnCd": {
+                        "type": "string",
+                        "description": "종목 코드보다 짧으면서 유일성이 보장되는 코드"
+                    },
+                    "isinCd": {
+                        "type": "string",
+                        "description": "현선물 통합상품의 종목 코드(12자리)"
+                    },
+                    "mrktCtg": {
+                        "type": "string",
+                        "description": "시장 구분 (KOSPI/KOSDAQ/KONEX 등)"
+                    },
+                    "itmsNm": {
+                        "type": "string",
+                        "description": "종목의 명칭"
+                    },
+                    "crno": {
+                        "type": "string",
+                        "description": "종목의 법인등록번호"
+                    },
+                    "corpNm": {
+                        "type": "string",
+                        "description": "종목의 법인 명칭"
+                    }
+                }
+            },
+            "Header": {
+                "type": "object",
+                "properties": {
+                    "resultCode": {
+                        "type": "string",
+                        "description": "API 호출 결과의 상태 코드"
+                    },
+                    "resultMsg": {
+                        "type": "string",
+                        "description": "API 호출 결과의 상태"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "query_key": {
+                "type": "apiKey",
+                "name": "serviceKey",
+                "in": "query"
+            }
+        }
+    }
+}
